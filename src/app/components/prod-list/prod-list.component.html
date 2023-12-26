@@ -1,0 +1,80 @@
+<div class="prueba">
+  <input id="search" type="text"[(ngModel)]="search" (ngModelChange)="filtrarProd()" placeholder="search...">
+  <button class="button" (click)="(goTo())">Agregar</button>
+</div>
+<div class="container">
+  <div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>logo</th>
+          <th>Nombre del producto</th>
+          <th>Descripción</th>
+          <th>Fecha de Liberación</th>
+          <th>Estado de reestructuración</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let transaction of list">
+        <tr *ngIf="editar !== transaction.id">
+          <td>
+            <div class="divLogo">
+              <p>{{ transaction.nombreProd | current }}</p>
+            </div>
+
+          <td>{{ transaction.nombreProd}}</td>
+          <td>{{ transaction.descripcionProd }}</td>
+          <td>
+            {{ transaction.fechaLiberacion | date: "dd/MM/YYYY" }}
+          </td>
+          <td>
+            {{ transaction.fechaRestructuracion | date: "dd/MM/YYYY" }}
+          </td>
+          <td>
+            <div class="dropdown">
+              <img class="icon" src="assets/menu-puntos-vertical.png" alt="">
+              <div class="dropdown-content">
+                <a class="button" (click)="(editarProd(transaction.id))">Editar</a>
+                <a class="button" (click)="(eliminarProd(transaction.id))">Eliminar</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr *ngIf="editar === transaction.id">
+          <td>
+            <img *ngIf="transaction.logo !== ''" class="logo" [src]="transaction.logo" alt="logo" />
+            <ng-template #content>
+              <div class="divLogo">
+                <p>{{ transaction.nombreProd | current }}</p>
+              </div>
+            </ng-template>
+          <td>
+            <input [(ngModel)]="formEdit.nombreProd" type="text" name="" id="">
+          </td>
+          <td>
+            <input [(ngModel)]="formEdit.descripcionProd" type="text" name="" id="">
+          </td>
+          <td>
+            <mat-form-field>
+              <input matInput [matDatepicker]="pickerlib" [(ngModel)]="formEdit.fechaLiberacion">
+              <mat-datepicker-toggle matIconSuffix [for]="pickerlib"></mat-datepicker-toggle>
+              <mat-datepicker #pickerlib></mat-datepicker>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker" [(ngModel)]="formEdit.fechaRestructuracion">
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </td>
+          <td>
+            <button class="buttonEdit" (click)="(guardarEdicion())">Guardar</button>
+            <button class="buttonCancel" (click)="(cancelarEdicion())">Cancelar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>{{list.length}} resultados</p>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="title">
+        <h5>Formulario de Registro</h5>
+    </div>
+    <div id="container-form"  [formGroup]="formProducto">
+            <div class="col">
+                <div class="itemForm">
+                    <label>ID:</label>
+                    <input formControlName="idProd" type="text">
+                </div>
+                <div class="itemForm">
+                    <label>Descripción:</label>
+                    <input formControlName="descripcionProd" type="text">
+                </div>
+                <div class="itemForm">
+                    <label>Fecha Liberación:</label>
+                    <mat-form-field>
+                        <input matInput formControlName="fechaLiberacion" [matDatepicker]="pickerlib"
+                            placeholder="mm/dd/yyyy">
+                        <mat-datepicker-toggle matIconSuffix [for]="pickerlib"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerlib></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col">
+                <div class="itemForm">
+                    <label>Nombre:</label>
+                    <input formControlName="nombreProd" type="text">
+                </div>
+                <div class="itemForm">
+                    <label>Logo:</label>
+                    <input formControlName="logoProd" type="text">
+                </div>
+                <div class="itemForm">
+                    <label>Fecha Revisión:</label>
+                    <mat-form-field>
+                        <input matInput formControlName="fechaRestructuracion" [matDatepicker]="pickerRef"
+                            placeholder="mm/dd/yyyy">
+                        <mat-datepicker-toggle matIconSuffix [for]="pickerRef"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerRef></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+    </div>
+    <div class="botons">
+        <button class="buttonReset" (click)="(resetForm())">Reiniciar</button>
+        <button class="buttonSent" (click)="(guardarEdicion())" [disabled]="!formProducto.valid">Enviar datos</button>
+    </div>
+</div>

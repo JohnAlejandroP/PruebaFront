@@ -1,0 +1,170 @@
+table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border-collapse: collapse;
+}
+
+.container {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    min-width: 100vh;
+    background: #ffffff;
+    padding: 1rem;
+  }
+
+#search {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.5rem;
+}
+
+.prueba {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.prueba input {
+    height: 26px;
+}
+
+.prueba button {
+    min-width: 0 ;
+    border: none;
+    display: inline-block;
+    padding: 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: #fff;
+    background: #0d0f31;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.buttonEdit{
+    min-width: 100%; ;
+    border: none;
+    display: inline-block;
+    padding: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #fff;
+    background: #0d0f31;
+    text-align: center;
+    white-space: nowrap;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.buttonCancel{
+    min-width: 100%; ;
+    border: none;
+    display: inline-block;
+    padding: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #fff;
+    background: #3659e3;
+    text-align: center;
+    white-space: nowrap;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+thead {
+    background-color: #defafd;
+    border-spacing: 0;
+}
+
+th {
+    padding: 15px 15px;
+    font-weight: 700;
+}
+
+td {
+    padding: 15px 15px;
+    border-bottom: 1px solid #c4bfbf;
+}
+
+.logo {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(177, 179, 174);
+}
+
+.divLogo p {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divLogo {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(177, 179, 174);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.button {
+    min-width: 100%;
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+}
